@@ -9,6 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="hiragana_char" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="hiragana" VerticalAlignment="Center" FontSize="72" Height="105" Width="289"/>
+        <Button Content="Button" HorizontalAlignment="Center" Margin="0,0,0,-275" VerticalAlignment="Center" Click="Button_Click"/>
 
     </Grid>
 </Page>
