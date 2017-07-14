@@ -23,7 +23,7 @@ namespace jpgame
     public sealed partial class Hiragana : Page
     {
 
-        List<string> hiraganaCharacters = new List<string>
+        private List<string> hiraganaCharacters = new List<string>
         {
         "\u3042","\u3044","\u3046","\u3048","\u304A","\u304B","\u304C","\u304D","\u304E","\u304F",
 
@@ -38,7 +38,7 @@ namespace jpgame
         "\u3092","\u3093","\u3094",
         };
 
-        List<string> romajiCharacters = new List<string>
+        private List<string> romajiCharacters = new List<string>
         {
         "a","i","u","e","o","ka","ga","ki","gi","ku",
 
@@ -53,7 +53,10 @@ namespace jpgame
         "wo","nn","vu",
         };
 
-        Dictionary<string, string> dictionary = new Dictionary<string, string>();
+        private Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
+        private int correct = 0;
+        private int incorrect = 0;
 
         public Hiragana()
         {
@@ -63,15 +66,67 @@ namespace jpgame
             {
                 dictionary.Add(hiraganaCharacters.ElementAt(i), romajiCharacters.ElementAt(i));
             }
+
             Random random = new Random();
-            int index = random.Next(hiraganaCharacters.Count);
-            var hiraganaCharacter = hiraganaCharacters[index];
-            hiraganaCharacters.RemoveAt(index);
+            int hiragana_index = random.Next(hiraganaCharacters.Count);
+            string hiraganaCharacter = hiraganaCharacters[hiragana_index];
+            hiraganaCharacters.RemoveAt(hiragana_index);
             hiragana_char.Text = hiraganaCharacter;
+            setButtonText();
+        }
+
+        private void setButtonText()
+        {
+            Random random = new Random();
+            int romaji_index = random.Next(romajiCharacters.Count);
+            string romajiCharacter1 = romajiCharacters[romaji_index];
+            option1.Content = romajiCharacter1;
+
+            romaji_index = random.Next(romajiCharacters.Count);
+            string romajiCharacter2 = romajiCharacters[romaji_index];
+            while (romajiCharacter2.Equals(romajiCharacter1, StringComparison.Ordinal))
+            {
+                romaji_index = random.Next(romajiCharacters.Count);
+                romajiCharacter2 = romajiCharacters[romaji_index];
+            }
+            option2.Content = romajiCharacter2;
+
+            romaji_index = random.Next(romajiCharacters.Count);
+            string romajiCharacter3 = romajiCharacters[romaji_index];
+            while (romajiCharacter3.Equals(romajiCharacter1, StringComparison.Ordinal) || romajiCharacter3.Equals(romajiCharacter2, StringComparison.Ordinal))
+            {
+                romaji_index = random.Next(romajiCharacters.Count);
+                romajiCharacter3 = romajiCharacters[romaji_index];
+            }
+            option3.Content = romajiCharacter3;
+
+            romaji_index = random.Next(romajiCharacters.Count);
+            string romajiCharacter4 = romajiCharacters[romaji_index];
+            while (romajiCharacter4.Equals(romajiCharacter1, StringComparison.Ordinal) || romajiCharacter4.Equals(romajiCharacter2, StringComparison.Ordinal) || romajiCharacter4.Equals(romajiCharacter3, StringComparison.Ordinal))
+            {
+                romaji_index = random.Next(romajiCharacters.Count);
+                romajiCharacter4 = romajiCharacters[romaji_index];
+            }
+            option4.Content = romajiCharacter4;
+
+        }
+
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Option2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Option4_Click(object sender, RoutedEventArgs e)
         {
 
         }
