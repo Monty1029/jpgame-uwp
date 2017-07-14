@@ -98,6 +98,7 @@
     <Compile Include="Hiragana.xaml.cs">
       <DependentUpon>Hiragana.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HiraKataLogic.cs" />
     <Compile Include="LevelSelect.xaml.cs">
       <DependentUpon>LevelSelect.xaml</DependentUpon>
     </Compile>
