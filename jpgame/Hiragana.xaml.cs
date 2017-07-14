@@ -82,7 +82,7 @@ namespace jpgame
 
         private void Option2_Click(object sender, RoutedEventArgs e)
         {
-            UpdateScore(hkl.GetScore(romajiCharacter1));
+            UpdateScore(hkl.GetScore(romajiCharacter2));
             hkl.ResetButtonSet();
             SetQuestionText();
             SetButtonText();
@@ -90,7 +90,7 @@ namespace jpgame
 
         private void Option3_Click(object sender, RoutedEventArgs e)
         {
-            UpdateScore(hkl.GetScore(romajiCharacter1));
+            UpdateScore(hkl.GetScore(romajiCharacter3));
             hkl.ResetButtonSet();
             SetQuestionText();
             SetButtonText();
@@ -98,7 +98,7 @@ namespace jpgame
 
         private void Option4_Click(object sender, RoutedEventArgs e)
         {
-            UpdateScore(hkl.GetScore(romajiCharacter1));
+            UpdateScore(hkl.GetScore(romajiCharacter4));
             hkl.ResetButtonSet();
             SetQuestionText();
             SetButtonText();
