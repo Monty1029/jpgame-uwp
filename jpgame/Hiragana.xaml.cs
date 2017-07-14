@@ -58,6 +58,12 @@ namespace jpgame
         private int correct = 0;
         private int incorrect = 0;
 
+        private string hiraganaCharacter = "";
+        private string romajiCharacter1 = "";
+        private string romajiCharacter2 = "";
+        private string romajiCharacter3 = "";
+        private string romajiCharacter4 = "";
+
         public Hiragana()
         {
             this.InitializeComponent();
@@ -67,23 +73,28 @@ namespace jpgame
                 dictionary.Add(hiraganaCharacters.ElementAt(i), romajiCharacters.ElementAt(i));
             }
 
+            setQuestionText();
+            setButtonText();
+        }
+
+        private void setQuestionText()
+        {
             Random random = new Random();
             int hiragana_index = random.Next(hiraganaCharacters.Count);
-            string hiraganaCharacter = hiraganaCharacters[hiragana_index];
+            hiraganaCharacter = hiraganaCharacters[hiragana_index];
             hiraganaCharacters.RemoveAt(hiragana_index);
             hiragana_char.Text = hiraganaCharacter;
-            setButtonText();
         }
 
         private void setButtonText()
         {
             Random random = new Random();
             int romaji_index = random.Next(romajiCharacters.Count);
-            string romajiCharacter1 = romajiCharacters[romaji_index];
+            romajiCharacter1 = romajiCharacters[romaji_index];
             option1.Content = romajiCharacter1;
 
             romaji_index = random.Next(romajiCharacters.Count);
-            string romajiCharacter2 = romajiCharacters[romaji_index];
+            romajiCharacter2 = romajiCharacters[romaji_index];
             while (romajiCharacter2.Equals(romajiCharacter1, StringComparison.Ordinal))
             {
                 romaji_index = random.Next(romajiCharacters.Count);
@@ -92,7 +103,7 @@ namespace jpgame
             option2.Content = romajiCharacter2;
 
             romaji_index = random.Next(romajiCharacters.Count);
-            string romajiCharacter3 = romajiCharacters[romaji_index];
+            romajiCharacter3 = romajiCharacters[romaji_index];
             while (romajiCharacter3.Equals(romajiCharacter1, StringComparison.Ordinal) || romajiCharacter3.Equals(romajiCharacter2, StringComparison.Ordinal))
             {
                 romaji_index = random.Next(romajiCharacters.Count);
@@ -101,7 +112,7 @@ namespace jpgame
             option3.Content = romajiCharacter3;
 
             romaji_index = random.Next(romajiCharacters.Count);
-            string romajiCharacter4 = romajiCharacters[romaji_index];
+            romajiCharacter4 = romajiCharacters[romaji_index];
             while (romajiCharacter4.Equals(romajiCharacter1, StringComparison.Ordinal) || romajiCharacter4.Equals(romajiCharacter2, StringComparison.Ordinal) || romajiCharacter4.Equals(romajiCharacter3, StringComparison.Ordinal))
             {
                 romaji_index = random.Next(romajiCharacters.Count);
@@ -113,22 +124,66 @@ namespace jpgame
 
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (romajiCharacter1.Equals(dictionary[hiraganaCharacter], StringComparison.Ordinal))
+            {
+                correct++;
+                Correct.Text = "Correct: " + correct.ToString();
+            }
+            else
+            {
+                incorrect++;
+                Incorrect.Text = "Incorrect: " + incorrect.ToString();
+            }
+            setQuestionText();
+            setButtonText();
         }
 
         private void Option2_Click(object sender, RoutedEventArgs e)
         {
-
+            if (romajiCharacter2.Equals(dictionary[hiraganaCharacter], StringComparison.Ordinal))
+            {
+                correct++;
+                Correct.Text = "Correct: " + correct.ToString();
+            }
+            else
+            {
+                incorrect++;
+                Incorrect.Text = "Incorrect: " + incorrect.ToString();
+            }
+            setQuestionText();
+            setButtonText();
         }
 
         private void Option3_Click(object sender, RoutedEventArgs e)
         {
-
+            if (romajiCharacter3.Equals(dictionary[hiraganaCharacter], StringComparison.Ordinal))
+            {
+                correct++;
+                Correct.Text = "Correct: " + correct.ToString();
+            }
+            else
+            {
+                incorrect++;
+                Incorrect.Text = "Incorrect: " + incorrect.ToString();
+            }
+            setQuestionText();
+            setButtonText();
         }
 
         private void Option4_Click(object sender, RoutedEventArgs e)
         {
-
+            if (romajiCharacter4.Equals(dictionary[hiraganaCharacter], StringComparison.Ordinal))
+            {
+                correct++;
+                Correct.Text = "Correct: " + correct.ToString();
+            }
+            else
+            {
+                incorrect++;
+                Incorrect.Text = "Incorrect: " + incorrect.ToString();
+            }
+            setQuestionText();
+            setButtonText();
         }
     }
 }
