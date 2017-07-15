@@ -8,43 +8,16 @@ using Windows.UI.Xaml.Controls;
 namespace jpgame
 {
     class HiraKataLogic
-    {
-        private List<string> hiraganaCharacters = new List<string>
-        {
-        "\u3042","\u3044","\u3046","\u3048","\u304A","\u304B","\u304C","\u304D","\u304E","\u304F",
-
-        "\u3050","\u3051","\u3052","\u3053","\u3054","\u3055","\u3056","\u3057","\u3058","\u3059","\u305A","\u305B","\u305C","\u305D","\u305E","\u305F",
-
-        "\u3060","\u3061","\u3064","\u3065","\u3066","\u3067","\u3068","\u3069","\u306A","\u306B","\u306C","\u306D","\u306E","\u306F",
-
-        "\u3070","\u3071","\u3072","\u3073","\u3074","\u3075","\u3076","\u3077","\u3078","\u3079","\u307A","\u307B","\u307C","\u307D","\u307E","\u307F",
-
-        "\u3080","\u3081","\u3082","\u3084","\u3086","\u3088","\u3089","\u308A","\u308B","\u308C","\u308D","\u308F",
-
-        "\u3092","\u3093","\u3094"
-        };
-
-        private List<string> romajiCharacters = new List<string>
-        {
-        "a","i","u","e","o","ka","ga","ki","gi","ku",
-
-        "gu","ke","ge","ko","go","sa","za","shi","ji","su","zu","se","ze","so","zo","ta",
-
-        "da","chi","tsu","dzu","te","de","to","do","na","ni","nu","ne","no","ha",
-
-        "ba","pa","hi","bi","pi","fu","bu","pu","he","be","pe","ho","bo","po","ma","mi",
-
-        "mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa",
-
-        "wo","nn","vu"
-        };
+    {        
 
         private Dictionary<string, string> dictionary = new Dictionary<string, string>();
+        List<string> hirakanaCharacters;
+        List<string> romajiCharacters;
 
         private int correct = 0;
         private int incorrect = 0;
 
-        private string hiraganaCharacter = "";
+        private string hirakanaCharacter = "";
         private string romajiCharacter1 = "";
         private string romajiCharacter2 = "";
         private string romajiCharacter3 = "";
@@ -54,12 +27,15 @@ namespace jpgame
 
         private bool[] optionButtonSet = new bool[] { false, false, false, false };
 
-        public HiraKataLogic(Button option1, Button option2, Button option3, Button option4)
+        public HiraKataLogic(Button option1, Button option2, Button option3, Button option4, List<string>hirakanaCharacters, List<string>romajiCharacters)
         {
 
-            for (int i = 0; i < hiraganaCharacters.Count; i++)
+            this.hirakanaCharacters = hirakanaCharacters;
+            this.romajiCharacters = romajiCharacters;
+
+            for (int i = 0; i < hirakanaCharacters.Count; i++)
             {
-                dictionary.Add(hiraganaCharacters.ElementAt(i), romajiCharacters.ElementAt(i));
+                dictionary.Add(hirakanaCharacters.ElementAt(i), romajiCharacters.ElementAt(i));
             }
 
             buttons[0] = option1;
@@ -71,10 +47,10 @@ namespace jpgame
         public string GetQuestionText()
         {
             Random random = new Random();
-            int hiragana_index = random.Next(hiraganaCharacters.Count);
-            hiraganaCharacter = hiraganaCharacters[hiragana_index];
-            hiraganaCharacters.RemoveAt(hiragana_index);
-            return hiraganaCharacter;
+            int hiragana_index = random.Next(hirakanaCharacters.Count);
+            hirakanaCharacter = hirakanaCharacters[hiragana_index];
+            hirakanaCharacters.RemoveAt(hiragana_index);
+            return hirakanaCharacter;
         }
 
         public string[] GetButtonText()
@@ -82,22 +58,22 @@ namespace jpgame
             Random random = new Random();
 
             int button_index = random.Next(buttons.Length);
-            buttons[button_index].Content = dictionary[hiraganaCharacter];
+            buttons[button_index].Content = dictionary[hirakanaCharacter];
             if (button_index == 0)
             {
-                romajiCharacter1 = dictionary[hiraganaCharacter];
+                romajiCharacter1 = dictionary[hirakanaCharacter];
             }
             else if (button_index == 1)
             {
-                romajiCharacter2 = dictionary[hiraganaCharacter];
+                romajiCharacter2 = dictionary[hirakanaCharacter];
             }
             else if (button_index == 2)
             {
-                romajiCharacter3 = dictionary[hiraganaCharacter];
+                romajiCharacter3 = dictionary[hirakanaCharacter];
             }
             else if (button_index == 3)
             {
-                romajiCharacter4 = dictionary[hiraganaCharacter];
+                romajiCharacter4 = dictionary[hirakanaCharacter];
             }
             optionButtonSet[button_index] = true;
 
@@ -154,7 +130,7 @@ namespace jpgame
 
         public string GetScore(string romajiCharacter)
         {
-            if (romajiCharacter.Equals(dictionary[hiraganaCharacter], StringComparison.Ordinal))
+            if (romajiCharacter.Equals(dictionary[hirakanaCharacter], StringComparison.Ordinal))
             {
                 correct++;
                 return "c" + correct.ToString();

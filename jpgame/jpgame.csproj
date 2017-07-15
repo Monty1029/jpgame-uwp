@@ -99,6 +99,9 @@
       <DependentUpon>Hiragana.xaml</DependentUpon>
     </Compile>
     <Compile Include="HiraKataLogic.cs" />
+    <Compile Include="Katakana.xaml.cs">
+      <DependentUpon>Katakana.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LevelSelect.xaml.cs">
       <DependentUpon>LevelSelect.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Hiragana.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Katakana.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

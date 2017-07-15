@@ -31,5 +31,10 @@ namespace jpgame
         {
             this.Frame.Navigate(typeof(Hiragana));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Katakana));
+        }
     }
 }

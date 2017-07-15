@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="jpgame.Katakana"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:jpgame"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="katakana_char" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="katakana" VerticalAlignment="Center" FontSize="72" Height="105" Width="289"/>
+        <Button x:Name="option1" Content="option1" HorizontalAlignment="Center" Margin="0,674,300,0" VerticalAlignment="Center" Click="Option1_Click"/>
+        <Button x:Name="option2" Content="option2" HorizontalAlignment="Center" Margin="0,674,100,0" VerticalAlignment="Center" Click="Option2_Click"/>
+        <Button x:Name="option3" Content="option3" HorizontalAlignment="Center" Margin="100,674,0,0" VerticalAlignment="Center" Click="Option3_Click"/>
+        <Button x:Name="option4" Content="option4" HorizontalAlignment="Center" Margin="300,674,0,0" VerticalAlignment="Center" Click="Option4_Click"/>
+        <TextBlock x:Name="Correct" HorizontalAlignment="Left" Margin="874,242,0,0" TextWrapping="Wrap" Text="Correct: 0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Incorrect" HorizontalAlignment="Left" Margin="874,292,0,0" TextWrapping="Wrap" Text="Incorrect: 0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

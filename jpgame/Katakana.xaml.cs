@@ -20,21 +20,21 @@ namespace jpgame
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Hiragana : Page
+    public sealed partial class Katakana : Page
     {
-        private List<string> hiraganaCharacters = new List<string>
+        private List<string> katakanaCharacters = new List<string>
         {
-        "\u3042","\u3044","\u3046","\u3048","\u304A","\u304B","\u304C","\u304D","\u304E","\u304F",
+        "\u30A2","\u30A4","\u30A6","\u30A8","\u30AA","\u30AB","\u30AC","\u30AD","\u30AE","\u30AF",
 
-        "\u3050","\u3051","\u3052","\u3053","\u3054","\u3055","\u3056","\u3057","\u3058","\u3059","\u305A","\u305B","\u305C","\u305D","\u305E","\u305F",
+        "\u30B0","\u30B1","\u30B2","\u30B3","\u30B4","\u30B5","\u30B6","\u30B7","\u30B8","\u30B9","\u30BA","\u30BB","\u30BC","\u30BD","\u30BE","\u30BF",
 
-        "\u3060","\u3061","\u3064","\u3065","\u3066","\u3067","\u3068","\u3069","\u306A","\u306B","\u306C","\u306D","\u306E","\u306F",
+        "\u30C0","\u30C1","\u30C4","\u30C5","\u30C6","\u30C7","\u30C8","\u30C9","\u30CA","\u30CB","\u30CC","\u30CD","\u30CE","\u30CF",
 
-        "\u3070","\u3071","\u3072","\u3073","\u3074","\u3075","\u3076","\u3077","\u3078","\u3079","\u307A","\u307B","\u307C","\u307D","\u307E","\u307F",
+        "\u30D0","\u30D1","\u30D2","\u30D3","\u30D4","\u30D5","\u30D6","\u30D7","\u30D8","\u30D9","\u30DA","\u30DB","\u30DC","\u30DD","\u30DE","\u30DF",
 
-        "\u3080","\u3081","\u3082","\u3084","\u3086","\u3088","\u3089","\u308A","\u308B","\u308C","\u308D","\u308F",
+        "\u30E0","\u30E1","\u30E2","\u30E4","\u30E6","\u30E8","\u30E9","\u30EA","\u30EB","\u30EC","\u30ED","\u30EF",
 
-        "\u3092","\u3093","\u3094"
+        "\u30F2","\u30F3","\u30F4", "\u30F7", "\u30FA"
         };
 
         private List<string> romajiCharacters = new List<string>
@@ -49,21 +49,21 @@ namespace jpgame
 
         "mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa",
 
-        "wo","nn","vu"
+        "wo","nn","vu", "va", "vo"
         };
 
         private string romajiCharacter1 = "";
         private string romajiCharacter2 = "";
         private string romajiCharacter3 = "";
         private string romajiCharacter4 = "";
-        
+
         private HiraKataLogic hkl;
 
-        public Hiragana()
+        public Katakana()
         {
             this.InitializeComponent();
 
-            hkl = new HiraKataLogic(option1, option2, option3, option4, hiraganaCharacters, romajiCharacters);
+            hkl = new HiraKataLogic(option1, option2, option3, option4, katakanaCharacters, romajiCharacters);
 
             SetQuestionText();
             SetButtonText();
@@ -71,7 +71,7 @@ namespace jpgame
 
         private void SetQuestionText()
         {
-            hiragana_char.Text = hkl.GetQuestionText();
+            katakana_char.Text = hkl.GetQuestionText();
         }
 
         private void SetButtonText()
@@ -104,7 +104,7 @@ namespace jpgame
 
         private void Option1_Click(object sender, RoutedEventArgs e)
         {
-            UpdateScore(hkl.GetScore(romajiCharacter1)); 
+            UpdateScore(hkl.GetScore(romajiCharacter1));
             hkl.ResetButtonSet();
             SetQuestionText();
             SetButtonText();
