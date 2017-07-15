@@ -13,8 +13,8 @@
         <Button x:Name="option2" Content="option2" HorizontalAlignment="Center" Margin="0,674,100,0" VerticalAlignment="Center" Click="Option2_Click"/>
         <Button x:Name="option3" Content="option3" HorizontalAlignment="Center" Margin="100,674,0,0" VerticalAlignment="Center" Click="Option3_Click"/>
         <Button x:Name="option4" Content="option4" HorizontalAlignment="Center" Margin="300,674,0,0" VerticalAlignment="Center" Click="Option4_Click"/>
-        <TextBlock x:Name="Correct" HorizontalAlignment="Left" Margin="874,242,0,0" TextWrapping="Wrap" Text="Correct: 0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="Incorrect" HorizontalAlignment="Left" Margin="874,292,0,0" TextWrapping="Wrap" Text="Incorrect: 0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Correct" HorizontalAlignment="Left" Margin="874,242,0,0" TextWrapping="Wrap" Text="✔: 0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Incorrect" HorizontalAlignment="Left" Margin="874,292,0,0" TextWrapping="Wrap" Text="✘: 0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

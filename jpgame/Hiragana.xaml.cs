@@ -93,12 +93,12 @@ namespace jpgame
             if (answerResult.StartsWith("c"))
             {
                 answerResult = answerResult.Substring(1);
-                Correct.Text = "Correct: " + answerResult;
+                Correct.Text = "\u2714: " + answerResult;
             }
             else if (answerResult.StartsWith("i"))
             {
                 answerResult = answerResult.Substring(1);
-                Incorrect.Text = "Incorrect: " + answerResult;
+                Incorrect.Text = "\u2718: " + answerResult;
             }
         }
 
