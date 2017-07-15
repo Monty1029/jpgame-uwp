@@ -46,6 +46,10 @@ namespace jpgame
 
         public string GetQuestionText()
         {
+            if (hirakanaCharacters.Count == 0)
+            {
+                return "done";
+            }
             Random random = new Random();
             int hiragana_index = random.Next(hirakanaCharacters.Count);
             hirakanaCharacter = hirakanaCharacters[hiragana_index];

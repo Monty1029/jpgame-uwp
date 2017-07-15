@@ -56,6 +56,8 @@ namespace jpgame
         private string romajiCharacter2 = "";
         private string romajiCharacter3 = "";
         private string romajiCharacter4 = "";
+
+        private bool option1Finish = false;
         
         private HiraKataLogic hkl;
 
@@ -67,11 +69,26 @@ namespace jpgame
 
             SetQuestionText();
             SetButtonText();
+            
         }
 
         private void SetQuestionText()
         {
-            hiragana_char.Text = hkl.GetQuestionText();
+            string questionText = hkl.GetQuestionText();
+            if (questionText.Equals("done", StringComparison.Ordinal))
+            {
+                hiragana_char.Text = "";
+                option1.Content = "Finish";
+                option1Finish = true;
+                option2.Visibility = Visibility.Collapsed;
+                option3.Visibility = Visibility.Collapsed;
+                option4.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                hiragana_char.Text = questionText;
+            }
+            
         }
 
         private void SetButtonText()
@@ -102,36 +119,46 @@ namespace jpgame
             }
         }
 
-        private void Option1_Click(object sender, RoutedEventArgs e)
+        private void UniversalButtonClick()
         {
-            UpdateScore(hkl.GetScore(romajiCharacter1)); 
             hkl.ResetButtonSet();
             SetQuestionText();
-            SetButtonText();
+            if (option1Finish == false)
+            {
+                SetButtonText();
+            }
+        }
+
+        private void Option1_Click(object sender, RoutedEventArgs e)
+        {            
+            if (option2.Visibility == Visibility.Collapsed)
+            {
+                this.Frame.Navigate(typeof(LevelSelect));
+            }
+            else
+            {
+                UpdateScore(hkl.GetScore(romajiCharacter1));
+                UniversalButtonClick();
+            }
+            
         }
 
         private void Option2_Click(object sender, RoutedEventArgs e)
         {
             UpdateScore(hkl.GetScore(romajiCharacter2));
-            hkl.ResetButtonSet();
-            SetQuestionText();
-            SetButtonText();
+            UniversalButtonClick();
         }
 
         private void Option3_Click(object sender, RoutedEventArgs e)
         {
             UpdateScore(hkl.GetScore(romajiCharacter3));
-            hkl.ResetButtonSet();
-            SetQuestionText();
-            SetButtonText();
+            UniversalButtonClick();
         }
 
         private void Option4_Click(object sender, RoutedEventArgs e)
         {
             UpdateScore(hkl.GetScore(romajiCharacter4));
-            hkl.ResetButtonSet();
-            SetQuestionText();
-            SetButtonText();
+            UniversalButtonClick();
         }
     }
 }
