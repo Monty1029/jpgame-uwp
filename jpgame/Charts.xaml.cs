@@ -20,31 +20,11 @@ namespace jpgame
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LevelSelect : Page
+    public sealed partial class Charts : Page
     {
-        public LevelSelect()
+        public Charts()
         {
             this.InitializeComponent();
-        }
-
-        private void Hiragana_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Hiragana));
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Katakana));
-        }
-
-        private void Chart_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Charts));
-        }
-
-        private void Colors_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Colors));
         }
     }
 }
