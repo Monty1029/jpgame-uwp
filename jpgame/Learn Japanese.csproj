@@ -95,18 +95,21 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Charts.xaml.cs">
-      <DependentUpon>Charts.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Colors.xaml.cs">
       <DependentUpon>Colors.xaml</DependentUpon>
     </Compile>
     <Compile Include="Hiragana.xaml.cs">
       <DependentUpon>Hiragana.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HiraganaChart.xaml.cs">
+      <DependentUpon>HiraganaChart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HiraKataLogic.cs" />
     <Compile Include="Katakana.xaml.cs">
       <DependentUpon>Katakana.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KatakanaChart.xaml.cs">
+      <DependentUpon>KatakanaChart.xaml</DependentUpon>
     </Compile>
     <Compile Include="LevelSelect.xaml.cs">
       <DependentUpon>LevelSelect.xaml</DependentUpon>
@@ -124,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\hiragana-chart.png" />
+    <Content Include="Images\katakana-chart.png" />
     <Content Include="Images\mainmenu.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -139,10 +143,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Charts.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,7 +151,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HiraganaChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Katakana.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KatakanaChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

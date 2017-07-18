@@ -7,10 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">           
-            <Button Content="Hiragana and Katakana Charts" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Chart_Click" Margin="20,20,0,0"/>
-            <Button Content="Hiragana" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Hiragana_Click" Margin="20,60,0,0"/>
-            <Button Content="Katakana" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Katakana_Click" Margin="20,100,0,0"/>
-            <Button Content="Colors" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Colors_Click" Margin="20,140,0,0"/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="Hiragana Chart" HorizontalAlignment="Left" VerticalAlignment="Top" Click="HiraganaChart_Click" Margin="20,20,0,0"/>
+        <Button Content="Katakana Chart" HorizontalAlignment="Left" VerticalAlignment="Top" Click="KatakanaChart_Click" Margin="20,60,0,0"/>
+        <Button Content="Hiragana" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Hiragana_Click" Margin="20,100,0,0"/>
+        <Button Content="Katakana" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Katakana_Click" Margin="20,140,0,0"/>
+        <Button Content="Colors" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Colors_Click" Margin="20,180,0,0"/>
     </Grid>
 </Page>

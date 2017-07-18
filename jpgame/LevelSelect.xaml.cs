@@ -32,9 +32,14 @@ namespace jpgame
             this.Frame.Navigate(typeof(Hiragana));
         }
 
-        private void Chart_Click(object sender, RoutedEventArgs e)
+        private void HiraganaChart_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Charts));
+            this.Frame.Navigate(typeof(HiraganaChart));
+        }
+
+        private void KatakanaChart_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(KatakanaChart));
         }
 
         private void Colors_Click(object sender, RoutedEventArgs e)
