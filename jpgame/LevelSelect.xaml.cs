@@ -46,10 +46,5 @@ namespace jpgame
         {
             this.Frame.Navigate(typeof(Katakana));
         }
-
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Hiragana));
-        }
     }
 }
