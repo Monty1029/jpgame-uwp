@@ -11,8 +11,8 @@ namespace jpgame
     {        
 
         private Dictionary<string, string> dictionary = new Dictionary<string, string>();
-        List<string> hirakanaCharacters;
-        List<string> romajiCharacters;
+        List<string> japaneseText;
+        List<string> englishText;
 
         private int correct = 0;
         private int incorrect = 0;
@@ -27,15 +27,15 @@ namespace jpgame
 
         private bool[] optionButtonSet = new bool[] { false, false, false, false };
 
-        public HiraKataLogic(Button option1, Button option2, Button option3, Button option4, List<string>hirakanaCharacters, List<string>romajiCharacters)
+        public HiraKataLogic(Button option1, Button option2, Button option3, Button option4, List<string>japaneseText, List<string>englishText)
         {
 
-            this.hirakanaCharacters = hirakanaCharacters;
-            this.romajiCharacters = romajiCharacters;
+            this.japaneseText = japaneseText;
+            this.englishText = englishText;
 
-            for (int i = 0; i < hirakanaCharacters.Count; i++)
+            for (int i = 0; i < japaneseText.Count; i++)
             {
-                dictionary.Add(hirakanaCharacters.ElementAt(i), romajiCharacters.ElementAt(i));
+                dictionary.Add(japaneseText.ElementAt(i), englishText.ElementAt(i));
             }
 
             buttons[0] = option1;
@@ -46,14 +46,14 @@ namespace jpgame
 
         public string GetQuestionText()
         {
-            if (hirakanaCharacters.Count == 0)
+            if (japaneseText.Count == 0)
             {
                 return "done";
             }
             Random random = new Random();
-            int hiragana_index = random.Next(hirakanaCharacters.Count);
-            hirakanaCharacter = hirakanaCharacters[hiragana_index];
-            hirakanaCharacters.RemoveAt(hiragana_index);
+            int hiragana_index = random.Next(japaneseText.Count);
+            hirakanaCharacter = japaneseText[hiragana_index];
+            japaneseText.RemoveAt(hiragana_index);
             return hirakanaCharacter;
         }
 
@@ -81,22 +81,22 @@ namespace jpgame
             }
             optionButtonSet[button_index] = true;
 
-            int romaji_index = random.Next(romajiCharacters.Count);
+            int romaji_index = random.Next(englishText.Count);
             if (optionButtonSet[0] == false)
             {
-                romajiCharacter1 = romajiCharacters[romaji_index];
+                romajiCharacter1 = englishText[romaji_index];
                 buttons[0].Content = romajiCharacter1;
                 optionButtonSet[0] = true;
             }
 
             if (optionButtonSet[1] == false)
             {
-                romaji_index = random.Next(romajiCharacters.Count);
-                romajiCharacter2 = romajiCharacters[romaji_index];
+                romaji_index = random.Next(englishText.Count);
+                romajiCharacter2 = englishText[romaji_index];
                 while (romajiCharacter2.Equals(romajiCharacter1, StringComparison.Ordinal) || romajiCharacter2.Equals(romajiCharacter3, StringComparison.Ordinal) || romajiCharacter2.Equals(romajiCharacter4, StringComparison.Ordinal))
                 {
-                    romaji_index = random.Next(romajiCharacters.Count);
-                    romajiCharacter2 = romajiCharacters[romaji_index];
+                    romaji_index = random.Next(englishText.Count);
+                    romajiCharacter2 = englishText[romaji_index];
                 }
                 buttons[1].Content = romajiCharacter2;
                 optionButtonSet[1] = true;
@@ -104,12 +104,12 @@ namespace jpgame
 
             if (optionButtonSet[2] == false)
             {
-                romaji_index = random.Next(romajiCharacters.Count);
-                romajiCharacter3 = romajiCharacters[romaji_index];
+                romaji_index = random.Next(englishText.Count);
+                romajiCharacter3 = englishText[romaji_index];
                 while (romajiCharacter3.Equals(romajiCharacter1, StringComparison.Ordinal) || romajiCharacter3.Equals(romajiCharacter2, StringComparison.Ordinal) || romajiCharacter3.Equals(romajiCharacter4, StringComparison.Ordinal))
                 {
-                    romaji_index = random.Next(romajiCharacters.Count);
-                    romajiCharacter3 = romajiCharacters[romaji_index];
+                    romaji_index = random.Next(englishText.Count);
+                    romajiCharacter3 = englishText[romaji_index];
                 }
                 buttons[2].Content = romajiCharacter3;
                 optionButtonSet[2] = true;
@@ -117,12 +117,12 @@ namespace jpgame
 
             if (optionButtonSet[3] == false)
             {
-                romaji_index = random.Next(romajiCharacters.Count);
-                romajiCharacter4 = romajiCharacters[romaji_index];
+                romaji_index = random.Next(englishText.Count);
+                romajiCharacter4 = englishText[romaji_index];
                 while (romajiCharacter4.Equals(romajiCharacter1, StringComparison.Ordinal) || romajiCharacter4.Equals(romajiCharacter2, StringComparison.Ordinal) || romajiCharacter4.Equals(romajiCharacter3, StringComparison.Ordinal))
                 {
-                    romaji_index = random.Next(romajiCharacters.Count);
-                    romajiCharacter4 = romajiCharacters[romaji_index];
+                    romaji_index = random.Next(englishText.Count);
+                    romajiCharacter4 = englishText[romaji_index];
                 }
                 buttons[3].Content = romajiCharacter4;
                 optionButtonSet[3] = true;

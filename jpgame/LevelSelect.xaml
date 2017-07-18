@@ -7,11 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Hiragana and Katakana Charts" HorizontalAlignment="Left" Margin="231,105,0,0" VerticalAlignment="Top" Click="Chart_Click"/>
-        <Button Content="Hiragana" HorizontalAlignment="Left" Margin="231,162,0,0" VerticalAlignment="Top" Click="Hiragana_Click"/>
-        <Button Content="Katakana" HorizontalAlignment="Left" Margin="231,218,0,0" VerticalAlignment="Top" Click="Katakana_Click"/>
-        <Button Content="Colors" HorizontalAlignment="Left" Margin="231,271,0,0" VerticalAlignment="Top" Click="Colors_Click"/>
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">           
+            <Button Content="Hiragana and Katakana Charts" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Chart_Click" Margin="20,20,0,0"/>
+            <Button Content="Hiragana" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Hiragana_Click" Margin="20,60,0,0"/>
+            <Button Content="Katakana" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Katakana_Click" Margin="20,100,0,0"/>
+            <Button Content="Colors" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Colors_Click" Margin="20,140,0,0"/>
     </Grid>
 </Page>
