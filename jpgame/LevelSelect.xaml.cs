@@ -32,11 +32,6 @@ namespace jpgame
             this.Frame.Navigate(typeof(Hiragana));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Katakana));
-        }
-
         private void Chart_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Charts));
@@ -45,6 +40,11 @@ namespace jpgame
         private void Colors_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Colors));
+        }
+
+        private void Katakana_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Katakana));
         }
     }
 }

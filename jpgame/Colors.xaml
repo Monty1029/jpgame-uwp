@@ -8,6 +8,13 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="color_question" HorizontalAlignment="Center" Margin="0,289,0,0" TextWrapping="Wrap" Text="color" VerticalAlignment="Center" FontSize="72" Height="320" Width="1204" TextAlignment="Center"/>
+        <Button x:Name="option1" Content="option1" HorizontalAlignment="Center" Margin="0,674,300,0" VerticalAlignment="Center" Click="Option1_Click"/>
+        <Button x:Name="option2" Content="option2" HorizontalAlignment="Center" Margin="0,674,100,0" VerticalAlignment="Center" Click="Option2_Click"/>
+        <Button x:Name="option3" Content="option3" HorizontalAlignment="Center" Margin="100,674,0,0" VerticalAlignment="Center" Click="Option3_Click"/>
+        <Button x:Name="option4" Content="option4" HorizontalAlignment="Center" Margin="300,674,0,0" VerticalAlignment="Center" Click="Option4_Click"/>
+        <TextBlock x:Name="Correct" HorizontalAlignment="Center" Margin="1000,0,0,100" TextWrapping="Wrap" Text="✔: 0" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Incorrect" HorizontalAlignment="Center" Margin="1000,100,0,0" TextWrapping="Wrap" Text="✘: 0" VerticalAlignment="Center"/>
 
     </Grid>
 </Page>
